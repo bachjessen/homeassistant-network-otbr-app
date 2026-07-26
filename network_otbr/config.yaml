@@ -1,5 +1,5 @@
 name: Network OTBR
-version: "5.0.0"
+version: "5.0.1"
 slug: network_otbr
 description: OpenThread Border Router for a network-connected RCP
 url: https://github.com/bachjessen/homeassistant-network-otbr-app
