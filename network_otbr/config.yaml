@@ -1,11 +1,11 @@
 name: Network OTBR
-version: "4"
+version: "4.1.0-ha1"
 slug: network_otbr
 description: OpenThread Border Router for a network-connected RCP
-url: https://github.com/wittdennis/homeassistant-otbr
+url: https://github.com/bachjessen/homeassistant-network-otbr-app
 arch:
   - aarch64
-image: denniswitt/homeassistant-otbr
+  - amd64
 startup: services
 boot: auto
 init: false
@@ -16,21 +16,28 @@ privileged:
   - IPC_LOCK
 devices:
   - /dev/net/tun
-environment:
-  DEVICE: /tmp/ttyOTBR
-  NETWORK_DEVICE: 10.40.10.11:6638
-  BAUDRATE: "460800"
-  BACKBONE_IF: end0
-  FLOW_CONTROL: "0"
-  AUTOFLASH_FIRMWARE: "0"
-  OTBR_LOG_LEVEL: "5"
-  FIREWALL: "1"
-  NAT64: "0"
-  BETA: "0"
+options:
+  network_device: 10.40.10.11:6638
+  backbone_interface: end0
+  baudrate: "460800"
+  flow_control: false
+  otbr_log_level: notice
+  firewall: true
+  nat64: false
+  beta: false
+schema:
+  network_device: str
+  backbone_interface: str
+  baudrate: list(57600|115200|230400|460800|921600|1000000)
+  flow_control: bool
+  otbr_log_level: list(debug|info|notice|warning|error|critical|alert|emergency)
+  firewall: bool
+  nat64: bool
+  beta: bool
 ports:
   8080/tcp: null
   8081/tcp: null
 ports_description:
   8080/tcp: OpenThread Web interface
   8081/tcp: OpenThread REST API
-schema: {}
+webui: http://8080

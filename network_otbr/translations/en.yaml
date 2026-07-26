@@ -1,0 +1,28 @@
+configuration:
+  network_device:
+    name: Network device
+    description: Network RCP address in host:port format, for example 10.40.10.11:6638.
+  backbone_interface:
+    name: Backbone interface
+    description: Home Assistant host interface used for Thread border routing.
+  baudrate:
+    name: Baud rate
+    description: Serial baud rate used by the network-connected RCP bridge.
+  flow_control:
+    name: Hardware flow control
+    description: Enable hardware flow control for the RCP connection.
+  otbr_log_level:
+    name: OTBR log level
+    description: Logging level used by the OpenThread Border Router agent.
+  firewall:
+    name: OTBR firewall
+    description: Enable the OpenThread Border Router firewall.
+  nat64:
+    name: NAT64
+    description: Enable IPv6-to-IPv4 network address translation for Thread devices.
+  beta:
+    name: Beta features
+    description: Enable experimental OpenThread features.
+network:
+  8080/tcp: OpenThread Web interface
+  8081/tcp: OpenThread REST API
