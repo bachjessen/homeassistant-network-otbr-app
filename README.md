@@ -195,3 +195,24 @@ A connected OTBR should report a role such as `child`, `router`, or `leader`, to
 ## License
 
 MIT
+
+
+## Project status and trademarks
+
+Network OTBR is an independent community project.
+
+The project is not affiliated with, endorsed by, sponsored by, or officially
+supported by the Open Home Foundation, Home Assistant, Google, OpenThread,
+Thread Group, SMLIGHT, or Dennis Witt.
+
+Product names, project names, and logos remain trademarks of their respective
+owners and are used only to identify compatibility and upstream components.
+
+## Warranty and liability
+
+This software is provided without warranty. Use of this App, including changes
+to Thread networking, routing, firewall rules, and connected devices, is at the
+user's own risk.
+
+See LICENSE and
+THIRD_PARTY_NOTICES.md.

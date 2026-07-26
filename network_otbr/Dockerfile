@@ -5,6 +5,8 @@ ARG BUILD_ARCH
 
 COPY rootfs /
 
+COPY LICENSE THIRD_PARTY_NOTICES.md /usr/share/licenses/network-otbr/
+
 RUN chmod 0755 /etc/s6-overlay/scripts/network-otbr-options.sh \
     && sed -i '2i eval "$(/etc/s6-overlay/scripts/network-otbr-options.sh | tee /dev/stderr | grep ^export)"' \
        /etc/s6-overlay/scripts/enable-check.sh
