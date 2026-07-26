@@ -1,5 +1,5 @@
 name: Network OTBR
-version: "5.0.10"
+version: "5.0.11"
 slug: network_otbr
 description: OpenThread Border Router for a network-connected RCP
 url: https://github.com/bachjessen/homeassistant-network-otbr-app
@@ -35,9 +35,9 @@ schema:
   nat64: bool
   beta: bool
 ports:
-  8080/tcp: null
+  8080/tcp: 8080
   8081/tcp: null
 ports_description:
   8080/tcp: OpenThread Web interface
   8081/tcp: OpenThread REST API
-webui: "http://10.40.10.10:8080"
+webui: "http://[HOST]:[PORT:8080]"
