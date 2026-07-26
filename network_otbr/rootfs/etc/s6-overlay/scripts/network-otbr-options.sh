@@ -42,6 +42,7 @@ for name, value in environment.items():
     destination = env_dir / name
     destination.write_text(value, encoding="utf-8")
     destination.chmod(0o600)
+    print(f"export {name}={value!r}")
 
 print("INFO: Network OTBR configuration loaded")
 print(f"INFO: Network RCP: {environment['NETWORK_DEVICE']}")
