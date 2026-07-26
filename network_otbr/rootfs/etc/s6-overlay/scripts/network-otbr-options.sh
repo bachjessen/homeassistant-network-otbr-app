@@ -22,23 +22,6 @@ env_dir = pathlib.Path(sys.argv[2])
 with options_file.open(encoding="utf-8") as file:
     options = json.load(file)
 
-required = (
-    "network_device",
-    "backbone_interface",
-    "baudrate",
-    "flow_control",
-    "otbr_log_level",
-    "firewall",
-    "nat64",
-    "beta",
-)
-
-missing = [key for key in required if key not in options]
-if missing:
-    raise SystemExit(
-        "ERROR: Missing required option(s): " + ", ".join(missing)
-    )
-
 def boolean(value):
     return "1" if value is True else "0"
 
@@ -63,6 +46,4 @@ for name, value in environment.items():
 print("INFO: Network OTBR configuration loaded")
 print(f"INFO: Network RCP: {environment['NETWORK_DEVICE']}")
 print(f"INFO: Backbone interface: {environment['BACKBONE_IF']}")
-print(f"INFO: Baud rate: {environment['BAUDRATE']}")
-print(f"INFO: OTBR log level: {environment['OTBR_LOG_LEVEL']}")
 PY
